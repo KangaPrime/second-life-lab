@@ -1,0 +1,27 @@
+# Secrets and keys: never commit these
+id_*
+*.pem
+*.key
+*.ppk
+.env
+.env.*
+*.token
+secrets*
+
+# Backups (the Kuma backup contains a Telegram token)
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+homelab-backup/
+backup/
+
+# Raw config copies that may hold real addresses
+*.local.yaml
+*.local.conf
+
+# macOS and editor files
+.DS_Store
+*.swp
+.vscode/
+.idea/
