@@ -1,0 +1,8 @@
+# Server (placeholders). Default deny, then only what is needed.
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow from <lan-subnet> to any port 22 proto tcp
+sudo ufw allow from <lan-subnet> to any port 3001 proto tcp
+sudo ufw allow in on tailscale0
+sudo ufw enable
+sudo ufw status verbose

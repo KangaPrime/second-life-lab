@@ -1,0 +1,14 @@
+# /etc/netplan/50-cloud-init.yaml (example, placeholders only)
+# Pins the server to a fixed address so it never changes after a reboot.
+# Apply carefully: sudo netplan try   (auto-rolls back if you lose connection)
+network:
+  version: 2
+  ethernets:
+    <interface>:
+      dhcp4: false
+      addresses: [<server-ip>/24]
+      routes:
+        - to: default
+          via: <router-ip>
+      nameservers:
+        addresses: [1.1.1.1, 9.9.9.9]

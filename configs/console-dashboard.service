@@ -1,0 +1,19 @@
+# /etc/systemd/system/console-dashboard.service
+# Shows btop on the first console as a user with no password and no sudo.
+[Unit]
+Description=btop dashboard on tty1
+After=systemd-user-sessions.service
+
+[Service]
+User=display
+TTYPath=/dev/tty1
+StandardInput=tty
+StandardOutput=tty
+TTYReset=yes
+TTYVHangup=yes
+Environment=TERM=linux
+ExecStart=/usr/bin/btop -t
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

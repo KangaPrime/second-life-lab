@@ -1,0 +1,14 @@
+# Uptime Kuma, bound to the LAN address only (Docker bypasses ufw otherwise).
+name: uptime-kuma
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "<server-ip>:3001:3001"
+    volumes:
+      - uptime-kuma:/app/data
+volumes:
+  uptime-kuma:
+    name: uptime-kuma
