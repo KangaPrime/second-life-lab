@@ -15,12 +15,16 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 
 | # | Project | What it does | Status |
 |---|---------|--------------|--------|
-| 1 | [Ubuntu home server](docs/01-ubuntu-server.md) | Hardened Linux server on a 2013 laptop, upgraded to 12 GB RAM and an SSD | Done |
-| 2 | Pi-hole on a Raspberry Pi | Network-wide ad and tracker blocking, with a fixed IP and firewall | Draft to write |
-| 3 | Tailscale private network | Reach my home services securely from anywhere, with no ports opened on the router | Draft to write |
-| 4 | Uptime Kuma + Telegram alerts | Monitors devices and messages my phone when something goes down | Draft to write |
-| 5 | Security notes | Threat model, hardening checklist, and what is exposed to the internet | Planned |
-| 6 | Arduino / Pi sensors and robotics | First hardware project once the network base is solid | Planned |
+| 01 | [Ubuntu home server](docs/01-ubuntu-server.md) | 
+| 02 | Docker and Uptime Kuma | docs/02-docker-uptime-kuma.md |
+| 03 | Pi-hole | docs/03-pihole.md |
+| 04 | Tailscale | docs/04-tailscale.md |
+| 05 | Telegram alerts | docs/05-telegram-alerts.md |
+| 06 | Console dashboard | docs/06-console-dashboard.md |
+| 07 | RAM and SSD upgrade | docs/07-ram-ssd-upgrade.md |
+| 08 | Git and GitHub setup | docs/08-git-and-github-setup.md |
+| 09 | Network audit | docs/09-network-audit.md |
+| – | Journal | docs/journal.md |
 
 ## Network overview
 
