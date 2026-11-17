@@ -1,0 +1,2 @@
+# Last line added to /etc/pam.d/sshd ("optional" means a failure here can never block a login)
+session optional pam_exec.so quiet /usr/local/bin/ssh-login-alert.sh
