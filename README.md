@@ -21,12 +21,12 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 | 04 | [Tailscale](docs/04-tailscale.md)| Private VPN to access Ads blocker and Server from anywhere  |
 | 05 | [Telegram alerts](docs/05-telegram-alerts.md)|Alert notification through Telegram for Homelab devices |
 | 06 | [Console dashboard](docs/06-console-dashboard.md) | Custom display when the laptop display is open |
-| 07 | [RAM and SSD upgrade](docs/07-ram-ssd-upgrade.md) |  |
-| 08 | Git and GitHub setup | (docs/08-git-and-github-setup.md) |
-| 09 | [Network audit] | (docs/09-network-audit.md) |
-| 10 | Backups | (docs/10-backups.md) |
-| 11 | Automatic updates | (docs/11-automatic-updates.md) |
-| 12 | SSH login alerts | (docs/12-ssh-login-alerts.md) |
+| 07 | [RAM and SSD upgrade](docs/07-ram-ssd-upgrade.md) | Upgraded the RAM and SSD|
+| 08 | [Git and GitHub setup](docs/08-git-and-github-setup.md) | Discovered that I need GitHub |
+| 09 | [Network audit](docs/09-network-audit.md) | security check |
+| 10 | [Backups](docs/10-backups.md) | Safety First |
+| 11 | [Automatic updates](docs/11-automatic-updates.md) | Auto-update on server and Raspberry PI  |
+| 12 | [SSH login alerts](docs/12-ssh-login-alerts.md) | Alert when login to Homelab devices |
 | – | Journal | docs/journal.md |
 
 ## Network overview
