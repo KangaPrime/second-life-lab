@@ -13,8 +13,8 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 
 ## What's in here
 
-| # | Project | What it does | Status |
-|---|---------|--------------|--------|
+| # | Project | What it does |
+|---|---------|--------------|
 | 01 | [Ubuntu home server](docs/01-ubuntu-server.md) 
 | 02 | [Docker and Uptime Kuma](docs/02-docker-uptime-kuma.md)
 | 03 | [Pi-hole](docs/03-pihole.md) |
