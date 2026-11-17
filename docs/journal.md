@@ -29,9 +29,13 @@ First README, the server page and a `.gitignore` that blocks keys, tokens and ba
 ## Sat 14 Nov 2026: Day 7 – Alerts and an audit
 Investigated flapping website alerts (a flaky check, not a breach), tuned retries, and audited my own network with Nmap. A version-detection scan briefly made the Pi-hole dashboard unresponsive, and a restart fixed it. See [05](05-telegram-alerts.md) and [09](09-network-audit.md).
 
+## Tue 17 Nov 2026: Day 8 – Backups, updates and login alerts
+Checked IPv6 exposure from the inside (the mobile network had no IPv6, so a real outside scan is still to do). Made, verified and pulled backups of the server configs, Kuma data and Pi-hole settings. Confirmed automatic security updates on both machines, found and fixed a gap on the Pi (the Raspberry Pi archive was not covered), and cleared 25 waiting packages, including OpenSSL and a new kernel. Added Telegram alerts for every SSH login, on the server and the Pi. See [10](10-backups.md), [11](11-automatic-updates.md), [12](12-ssh-login-alerts.md) and [09](09-network-audit.md).
+
 ## Habits I have built
 
 - Make one change, test it, and keep a second session open as a safety net.
 - Read the prompt and the whole command before pressing Enter. Most of my mistakes were a missing letter, a stray character or the wrong machine.
 - Back up before changing hardware, and delete copies of secrets afterwards.
 - End every session with a `git push`.
+- Test claims instead of assuming them: a backup is real once opened and compared, and "updates are on" is real once a dry run shows what is covered.
