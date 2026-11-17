@@ -20,7 +20,7 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 | 03 | [Pi-hole](docs/03-pihole.md) |
 | 04 | [Tailscale](docs/04-tailscale.md) |
 | 05 | [Telegram alerts](docs/05-telegram-alerts.md)
-| 06 | Console dashboard | (docs/06-console-dashboard.md) |
+| 06 | [Console dashboard]((docs/06-console-dashboard.md)) |  |
 | 07 | RAM and SSD upgrade | (docs/07-ram-ssd-upgrade.md) |
 | 08 | Git and GitHub setup | (docs/08-git-and-github-setup.md) |
 | 09 | Network audit | (docs/09-network-audit.md) |
