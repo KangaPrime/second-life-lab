@@ -15,15 +15,15 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 
 | # | Project | What it does |
 |---|---------|--------------|
-| 01 | [Ubuntu home server](docs/01-ubuntu-server.md) 
-| 02 | [Docker and Uptime Kuma](docs/02-docker-uptime-kuma.md)
-| 03 | [Pi-hole](docs/03-pihole.md) |
-| 04 | [Tailscale](docs/04-tailscale.md) |
-| 05 | [Telegram alerts](docs/05-telegram-alerts.md)
-| 06 | [Console dashboard](docs/06-console-dashboard.md) | custom display when the laptop display is open |
-| 07 | RAM and SSD upgrade | (docs/07-ram-ssd-upgrade.md) |
+| 01 | [Ubuntu home server](docs/01-ubuntu-server.md) |setting up ubuntu server in an old laptop|
+| 02 | [Docker and Uptime Kuma](docs/02-docker-uptime-kuma.md) |installing docker and setup live monitoring with Uptime Kuma|
+| 03 | [Pi-hole](docs/03-pihole.md)| Ads blocker using R-pi for home |
+| 04 | [Tailscale](docs/04-tailscale.md)| Private VPN to access Ads blocker and Server from anywhere  |
+| 05 | [Telegram alerts](docs/05-telegram-alerts.md)|Alert notification through Telegram for Homelab devices |
+| 06 | [Console dashboard](docs/06-console-dashboard.md) | Custom display when the laptop display is open |
+| 07 | [RAM and SSD upgrade](docs/07-ram-ssd-upgrade.md) |  |
 | 08 | Git and GitHub setup | (docs/08-git-and-github-setup.md) |
-| 09 | Network audit | (docs/09-network-audit.md) |
+| 09 | [Network audit] | (docs/09-network-audit.md) |
 | 10 | Backups | (docs/10-backups.md) |
 | 11 | Automatic updates | (docs/11-automatic-updates.md) |
 | 12 | SSH login alerts | (docs/12-ssh-login-alerts.md) |
