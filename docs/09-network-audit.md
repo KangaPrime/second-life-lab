@@ -50,9 +50,19 @@ sudo nmap -sU -p 53 <pi-ip>                   # DNS uses UDP too
 
 `last -a` on the server showed every login coming from my own laptop's address, dated to my work sessions, with nothing in the days when the website monitor was flapping (see [05](05-telegram-alerts.md)).
 
+## IPv6 check from the inside (17 Nov)
+
+The server has a public IPv6 address, so I checked IPv6 as well as IPv4:
+
+- `grep IPV6 /etc/default/ufw` showed `IPV6=yes`.
+- `ufw status verbose`: default `deny (incoming)`. The only IPv6 rule is SSH on the Tailscale interface. There is no rule allowing the public IPv6 address in.
+- `ss -6 -tulpn`: SSH listens on all addresses (the firewall blocks it from the internet), Tailscale ports are on the tunnel, the clock-sync port is loopback-only and the DHCPv6 client port is link-local. Nothing unexpected.
+
+This verifies the **rules**. It is good evidence but not proof, and I record it as "IPv6 rules verified, real outside scan still to do".
+
 ## Not tested yet
 
-- A scan **from outside** my home, to confirm nothing answers over IPv4 or IPv6. My devices have public IPv6 addresses, so this is worth doing from mobile data with Tailscale off.
+- A real scan **from outside** my home. I tried from mobile data, but the carrier gave no IPv6 (`curl -6` returned nothing), so the test could not run. Retry from any IPv6-enabled network with `nmap -6 -Pn -p 22,53,80,443,3001 <public-ipv6>`.
 - The router itself.
 - Repeating the scan on a schedule and comparing the results.
 
