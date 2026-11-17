@@ -24,6 +24,9 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 | 07 | RAM and SSD upgrade | docs/07-ram-ssd-upgrade.md |
 | 08 | Git and GitHub setup | docs/08-git-and-github-setup.md |
 | 09 | Network audit | docs/09-network-audit.md |
+| 10 | Backups | docs/10-backups.md |
+| 11 | Automatic updates | docs/11-automatic-updates.md |
+| 12 | SSH login alerts | docs/12-ssh-login-alerts.md |
 | – | Journal | docs/journal.md |
 
 ## Network overview
