@@ -15,18 +15,18 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 
 | # | Project | What it does | Status |
 |---|---------|--------------|--------|
-| 01 | [Ubuntu home server](docs/01-ubuntu-server.md) | 
-| 02 | Docker and Uptime Kuma | docs/02-docker-uptime-kuma.md |
-| 03 | Pi-hole | docs/03-pihole.md |
-| 04 | Tailscale | docs/04-tailscale.md |
-| 05 | Telegram alerts | docs/05-telegram-alerts.md |
-| 06 | Console dashboard | docs/06-console-dashboard.md |
-| 07 | RAM and SSD upgrade | docs/07-ram-ssd-upgrade.md |
-| 08 | Git and GitHub setup | docs/08-git-and-github-setup.md |
-| 09 | Network audit | docs/09-network-audit.md |
-| 10 | Backups | docs/10-backups.md |
-| 11 | Automatic updates | docs/11-automatic-updates.md |
-| 12 | SSH login alerts | docs/12-ssh-login-alerts.md |
+| 01 | [Ubuntu home server](docs/01-ubuntu-server.md) 
+| 02 | [Docker and Uptime Kuma](docs/02-docker-uptime-kuma.md)
+| 03 | [Pi-hole](docs/03-pihole.md) |
+| 04 | [Tailscale](docs/04-tailscale.md) |
+| 05 | [Telegram alerts](docs/05-telegram-alerts.md)
+| 06 | Console dashboard | (docs/06-console-dashboard.md) |
+| 07 | RAM and SSD upgrade | (docs/07-ram-ssd-upgrade.md) |
+| 08 | Git and GitHub setup | (docs/08-git-and-github-setup.md) |
+| 09 | Network audit | (docs/09-network-audit.md) |
+| 10 | Backups | (docs/10-backups.md) |
+| 11 | Automatic updates | (docs/11-automatic-updates.md) |
+| 12 | SSH login alerts | (docs/12-ssh-login-alerts.md) |
 | – | Journal | docs/journal.md |
 
 ## Network overview
