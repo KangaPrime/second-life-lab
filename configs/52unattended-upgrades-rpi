@@ -1,0 +1,5 @@
+# /etc/apt/apt.conf.d/52unattended-upgrades-rpi  (Raspberry Pi OS only)
+# Lets automatic updates also take security fixes from the Raspberry Pi archive.
+Unattended-Upgrade::Origins-Pattern {
+    "origin=Raspberry Pi Foundation,codename=${distro_codename},label=Raspberry Pi Foundation";
+};
