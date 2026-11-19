@@ -1,0 +1,7 @@
+# /etc/systemd/system/homelab-backup.service
+[Unit]
+Description=Nightly homelab backup (configs and Uptime Kuma data)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/homelab-backup.sh

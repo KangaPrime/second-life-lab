@@ -49,11 +49,28 @@ All archives live on my laptop in a folder **outside** the Git repo.
 | Typing `~/.ssh/` gave "permission denied" | I tried to run a folder | Use `ls ~/.ssh` to list it |
 | `grep /etc/default/ufw` and `curl -6` run on the Mac gave nothing | Commands belong on the server | Read which machine the prompt names |
 
+## Automating it (Thu 19 Nov)
+
+Manual backups depend on remembering, so I scheduled both halves.
+
+**Server (systemd timer, 03:30 nightly).** `configs/homelab-backup.sh` makes the archives and a `SHA256SUMS` file, keeps 7 days, and always restarts Kuma (a `trap` runs even if a step fails). `Persistent=true` on the timer means a night the server was off is caught up at the next boot. I used a timer rather than cron because it is built in and I already use systemd. The script leaves out `/etc/ssh-login-alert.conf`, because it holds a bot token and can be reissued.
+
+**Mac (launchd, 10:00 daily).** `configs/mac-homelab-pull.sh` pulls the files, runs `shasum -c` against the server's checksum list, logs the result and shows a macOS notification on failure. A job missed while the laptop slept runs when it wakes. The server never holds a key to the Mac.
+
+Tested in three stages: by hand, through `systemctl start` (the way the timer runs it), and through `launchctl kickstart` (the way the scheduler runs it). Both halves logged success.
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| Script printed only `scp: Connection closed` | My `-q` flag hid the real error (`Permission denied (publickey)`) | Drop `-q` when diagnosing |
+| Background pull could not log in | The Mac's agent held only the GitHub key. The server key needed a passphrase, and `BatchMode` cannot type one | `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`, plus a `Host` block with `UseKeychain yes` and `IdentitiesOnly yes` in `~/.ssh/config` |
+
 ## Limits (honest)
 
-- Backups are manual for now. Automating them (a scheduled pull) is a future step.
+- The Pi-hole Teleporter export is still a manual click. Pi-hole v6 has an API that could automate it.
+- The Mac pull only succeeds at home or over Tailscale, and fails with a notification otherwise. It tries again the next day.
+- A backup failing on the server side is only noticed when the checksum or the file is missing. A "backup older than 2 days" alert would close that gap.
 - I have not yet done a full restore test on a spare disk. The checksum and `tar tzf` checks prove the files are intact, not that a rebuild works end to end. The 6 Nov rebuild did prove the restore order for the server.
-- The laptop is the only copy. A second location (the planned NAS) would complete the 3-2-1 rule.
+- The laptop is the only off-server copy. A second location (the planned NAS) would complete the 3-2-1 rule.
 
 ## What I learned
 
