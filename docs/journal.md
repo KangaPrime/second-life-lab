@@ -32,10 +32,14 @@ Investigated flapping website alerts (a flaky check, not a breach), tuned retrie
 ## Tue 17 Nov 2026: Day 8 – Backups, updates and login alerts
 Checked IPv6 exposure from the inside (the mobile network had no IPv6, so a real outside scan is still to do). Made, verified and pulled backups of the server configs, Kuma data and Pi-hole settings. Confirmed automatic security updates on both machines, found and fixed a gap on the Pi (the Raspberry Pi archive was not covered), and cleared 25 waiting packages, including OpenSSL and a new kernel. Added Telegram alerts for every SSH login, on the server and the Pi. See [10](10-backups.md), [11](11-automatic-updates.md), [12](12-ssh-login-alerts.md) and [09](09-network-audit.md).
 
+## Thu 19 Nov 2026: Day 9 – Scheduled backups and Jellyfin
+Automated the backups: a nightly systemd timer on the server, and a launchd job on the Mac that pulls and verifies them (it failed first because the Mac's agent held only the GitHub key, then worked after loading the server key into the keychain). Wiped and health-tested the old 500 GB hard drive through a USB adapter that cannot report SMART (a 4-hour full-surface write, clean), formatted it, mounted it permanently, and set up Jellyfin on it: LAN-only, read-only media, reachable away from home only through Tailscale. Reboot test passed. See [10](10-backups.md) and [13](13-jellyfin.md).
+
 ## Habits I have built
 
 - Make one change, test it, and keep a second session open as a safety net.
 - Read the prompt and the whole command before pressing Enter. Most of my mistakes were a missing letter, a stray character or the wrong machine.
 - Back up before changing hardware, and delete copies of secrets afterwards.
 - End every session with a `git push`.
+- Use a drive's permanent name and a guard condition before any command that destroys data.
 - Test claims instead of assuming them: a backup is real once opened and compared, and "updates are on" is real once a dry run shows what is covered.
