@@ -27,6 +27,7 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 | 10 | [Backups](docs/10-backups.md) | Safety First |
 | 11 | [Automatic updates](docs/11-automatic-updates.md) | Auto-update on server and Raspberry PI  |
 | 12 | [SSH login alerts](docs/12-ssh-login-alerts.md) | Alert when login to Homelab devices |
+| 13 | [Jellyfin media server](docs/13-jellyfin.md) | youtube just increased its sbscription,soo. |
 | – | Journal | docs/journal.md |
 
 ## Network overview
