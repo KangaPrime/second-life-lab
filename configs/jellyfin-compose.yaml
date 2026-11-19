@@ -1,0 +1,21 @@
+# ~/jellyfin/compose.yaml  (placeholders only)
+name: jellyfin
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest      # consider pinning a version once it is known to work
+    container_name: jellyfin
+    user: "<uid>:<gid>"                  # run as a normal user, not root
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "<server-ip>:8096:8096"          # LAN address only (Docker bypasses ufw otherwise)
+    volumes:
+      - /srv/jellyfin/config:/config     # on the SSD
+      - /srv/jellyfin/cache:/cache       # on the SSD
+      - type: bind
+        source: /srv/media
+        target: /media
+        read_only: true                  # Jellyfin can read the media but never change it
+        bind:
+          create_host_path: false        # refuse to start if the drive is not mounted
