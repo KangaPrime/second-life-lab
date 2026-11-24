@@ -1,0 +1,10 @@
+# /etc/systemd/system/homelab-health.timer
+[Unit]
+Description=Run the homelab health check daily
+
+[Timer]
+OnCalendar=*-*-* 09:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
