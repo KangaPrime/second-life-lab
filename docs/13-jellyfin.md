@@ -85,7 +85,7 @@ Done immediately after starting, because until the wizard finishes anyone on the
 - **One old drive, no redundancy.** Only replaceable media belongs on it.
 - The write test is good evidence of health but not a guarantee, because the drive is old and there is no SMART data.
 - `jellyfin:latest` is not pinned, so an image update can change behaviour. Pin a known-good version once it is stable.
-- **The Jellyfin config (accounts, library settings) is not in the nightly backup yet.** To do.
+- Jellyfin's config (accounts, library settings) is in the nightly backup since 24 Nov, but the media is not.
 - No transcoding: a device that cannot play a file natively will fail.
 - Jellyfin is for media I own.
 

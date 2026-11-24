@@ -43,6 +43,10 @@ I copied the exact origin and label from `apt-cache policy | grep -A1 raspberryp
 
 Expected side effect: the Pi is the home DNS, so websites failed for about a minute and Kuma sent Telegram alerts, then recovered.
 
+## A pending restart (24 Nov)
+
+After five days, `ls /var/run/reboot-required` showed a file: a kernel security update (`linux-image-7.0.0-44`) was installed but not active. Automatic updates install fixes, but the running kernel stays old until a restart, and I keep automatic reboots off. I rebooted at a quiet moment, and the media drive and both containers came back by themselves. The daily health check now reports a pending reboot (see [14](14-health-check.md)), so I do not need to remember to look.
+
 ## Not automatic (on purpose)
 
 - **Pi-hole itself** updates only with `pihole -up`. Back up with Teleporter first.
