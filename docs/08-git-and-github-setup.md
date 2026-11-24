@@ -70,9 +70,11 @@ git push                        # upload it
 | Could not find the "public" key | The `ssh-keygen` output prints a path, a fingerprint and a picture, none of which is the key | `cat` the `.pub` file. The key is one long line starting `ssh-ed25519` |
 | Not sure which of two similar files to copy | Public and private files differ only by `.pub` | Only the `.pub` goes online |
 | `(base)` in the terminal prompt | An Anaconda Python environment is active | Harmless, nothing to do with Git |
+| `! [rejected] main -> main (fetch first)` | GitHub had commits my Mac lacked (I had edited the README in the browser) | `git fetch origin`, look at `git log --oneline HEAD..origin/main`, then `git pull --rebase origin main` and push. Never force-push over someone else's work |
 
 ## What I learned
 
 - Small, frequent commits with plain notes show how I work.
 - A public repo is a shop window, and I decide what goes in it.
 - Separate keys for separate jobs: one for GitHub, another for my servers.
+- Run `git pull --rebase` before starting or pushing. Five commits sat unpushed for two days because I did not notice the pushes were being rejected, so I now read the output of every push.
