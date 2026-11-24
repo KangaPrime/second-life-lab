@@ -12,6 +12,7 @@ If the SSD dies, rebuild from a backup, not from memory. Prove the backup is goo
 |------|-----|-------------------|
 | Server config files (netplan, SSH hardening, lid, dashboard service, ufw rules) | `tar` archive | Mostly no, but treat as private |
 | Uptime Kuma data (monitors, settings, Telegram setup) | Docker volume copied with a throwaway container | **Yes** (bot token) |
+| Jellyfin config (accounts, library settings; added 24 Nov) | Folder archive, with Jellyfin stopped for a few seconds | **Yes** (password hashes, API keys) |
 | Pi-hole settings | Teleporter export from the web dashboard | Treat as private |
 
 All archives live on my laptop in a folder **outside** the Git repo.
@@ -63,6 +64,10 @@ Tested in three stages: by hand, through `systemctl start` (the way the timer ru
 |---------|-------|-----|
 | Script printed only `scp: Connection closed` | My `-q` flag hid the real error (`Permission denied (publickey)`) | Drop `-q` when diagnosing |
 | Background pull could not log in | The Mac's agent held only the GitHub key. The server key needed a passphrase, and `BatchMode` cannot type one | `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`, plus a `Host` block with `UseKeychain yes` and `IdentitiesOnly yes` in `~/.ssh/config` |
+
+**Added 24 Nov: Jellyfin's config.** Without it, a dead SSD would mean redoing the first-run setup and every account. Both Kuma and Jellyfin are stopped together for about 15 seconds so neither database is copied half-written, and the `trap` restarts both even if a step fails. The same checksum list covers all three archives, and the Mac pull needed no change, because it fetches `backups/*` and verifies every file listed. The media drive is deliberately not backed up (replaceable and large).
+
+**Observed:** after five days of running, every night's files were present on the Mac. One pull failed on 23 Nov (the Mac could not reach the server), and the next day's pull caught up. That is the design working: a failure is logged and notified, and the next run fills the gap. A daily health check now alerts if the newest backup gets older than 36 hours (see [14](14-health-check.md)).
 
 ## Limits (honest)
 
