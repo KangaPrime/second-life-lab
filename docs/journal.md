@@ -35,6 +35,9 @@ Checked IPv6 exposure from the inside (the mobile network had no IPv6, so a real
 ## Thu 19 Nov 2026: Day 9 – Scheduled backups and Jellyfin
 Automated the backups: a nightly systemd timer on the server, and a launchd job on the Mac that pulls and verifies them (it failed first because the Mac's agent held only the GitHub key, then worked after loading the server key into the keychain). Wiped and health-tested the old 500 GB hard drive through a USB adapter that cannot report SMART (a 4-hour full-surface write, clean), formatted it, mounted it permanently, and set up Jellyfin on it: LAN-only, read-only media, reachable away from home only through Tailscale. Reboot test passed. See [10](10-backups.md) and [13](13-jellyfin.md).
 
+## Tue 24 Nov 2026: Day 10 – A pending reboot and a health check
+Backups had run unattended for five nights (one Mac pull failed and recovered the next day). A routine check found a kernel update waiting for a restart, so I rebooted (everything came back by itself) and applied 11 other updates. Added Jellyfin's config to the nightly backup, and built a daily health check that messages Telegram only when something is wrong: stale backup, pending reboot, missing drive, dead container, full disk, SSD health. Tested the alert by faking a problem. Also fixed a Git problem: pushes had been rejected for days because the README was edited on GitHub. See [10](10-backups.md), [11](11-automatic-updates.md), [14](14-health-check.md) and [08](08-git-and-github-setup.md).
+
 ## Habits I have built
 
 - Make one change, test it, and keep a second session open as a safety net.
@@ -42,4 +45,6 @@ Automated the backups: a nightly systemd timer on the server, and a launchd job 
 - Back up before changing hardware, and delete copies of secrets afterwards.
 - End every session with a `git push`.
 - Use a drive's permanent name and a guard condition before any command that destroys data.
+- Read the output of every push. A rejected push is not a pushed commit.
+- A check is not trusted until I have seen its alert fire.
 - Test claims instead of assuming them: a backup is real once opened and compared, and "updates are on" is real once a dry run shows what is covered.
