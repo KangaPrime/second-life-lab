@@ -28,7 +28,7 @@ This repo is my record of that. I'm looking for roles in IT support, networking,
 | 11 | [Automatic updates](docs/11-automatic-updates.md) | Auto-update on server and Raspberry PI  |
 | 12 | [SSH login alerts](docs/12-ssh-login-alerts.md) | Alert when login to Homelab devices |
 | 13 | [Jellyfin media server](docs/13-jellyfin.md) | youtube just increased its sbscription,soo. |
-| 14 | Daily health check | docs/14-health-check.md |
+| 14 | [Daily health check](docs/14-health-check.md) | Reminder more than alerts  |
 | – | Journal | docs/journal.md |
 
 ## Network overview
